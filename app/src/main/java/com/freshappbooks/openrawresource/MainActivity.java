@@ -3,6 +3,7 @@ package com.freshappbooks.openrawresource;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -14,6 +15,7 @@ import java.io.Writer;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MyApp";
     TextView textView;
 
     @Override
@@ -22,10 +24,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView);
-        InputStream stream = getInputStream(R.ra.license1);
+        InputStream stream = getInputStream(R.raw.lic);
+        String result = getStringFromRawResource(stream);
+        Log.d(TAG, "onCreate: = " + result );
+
+        textView.setText(result);
 
     }
-    private String getStringFromRawResourse(InputStream inputStream) {
+    private String getStringFromRawResource(InputStream inputStream) {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         Writer writer = new StringWriter();
         try {
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             line = bufferedReader.readLine();
             while (line != null) {
                 writer.write(line);
-                writer.append("/");
+                writer.append("\n");
                 line = bufferedReader.readLine();
             }
 
