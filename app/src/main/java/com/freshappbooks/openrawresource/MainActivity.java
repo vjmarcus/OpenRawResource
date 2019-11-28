@@ -24,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.textView);
-        InputStream stream = getInputStream(R.raw.lic);
+        InputStream stream = null;
+        try {
+            stream = getInputStream("lic.txt");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String result = getStringFromRawResource(stream);
         Log.d(TAG, "onCreate: = " + result );
 
@@ -54,5 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
     private InputStream getInputStream (int rawId) {
         return getResources().openRawResource(rawId);
+    }
+
+    private InputStream getInputStream (String filename) throws IOException {
+        return getAssets().open(filename);
     }
 }

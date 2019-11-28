@@ -1,0 +1,13 @@
+#резюме #ищу #android #junior #java #спб #питер #
+Формат работы: любой
+Занятость: полная, частичная, проектная
+Ожидания по зарплате: от 39 999 руб.
+
+Доброго времени суток! 
+Ищу работу 👶🏻Junior Android разработчиком.
+
+Резюме на hh: https://spb.hh.ru/resume/f4b7f231ff075af9b20039ed1f30674c597a63
+Git: https://github.com/vjmarcus
+Telegram: @vjmarcus
+
+📵Стек: android sdk, java, room, preferences, AsyncTask, Retrofit2, Gson, Glide, Picasso, Firebase SDK, Facebook SDK, Admob, Flurry
